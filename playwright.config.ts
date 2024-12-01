@@ -18,8 +18,8 @@ export default defineConfig({
       use: { ...devices['iPhone 12'], browserName: 'chromium' },
     },
     {
-      name: 'Mobile Safari',
-      use: {...devices['iPhone 15 Pro Max'], browserName: 'webkit' },
+      name: 'Mobile Mozilla',
+      use: {...devices['iPhone 15 Pro Max'], browserName: 'firefox' },
     },
   ],
 });
