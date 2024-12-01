@@ -39,11 +39,10 @@ jobs:
       - name: Install deps
         run: |
           npm ci
-          cd playwright && npm ci
           npx playwright install
       
-      - name: Install Playwright dependencies
-        run: npx playwright install-deps
+      # - name: Install Playwright dependencies
+      #   run: npx playwright install-deps
 
       - name: Test
         run: npm run regression --ignore-snapshots
