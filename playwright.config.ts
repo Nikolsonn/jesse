@@ -17,5 +17,9 @@ export default defineConfig({
       name: 'Mobile Chrome',
       use: { ...devices['iPhone 12'], browserName: 'chromium' },
     },
+    {
+      name: 'Mobile Safari',
+      use: {...devices['iPhone 15 Pro Max'], browserName: 'webkit' },
+    },
   ],
 });
