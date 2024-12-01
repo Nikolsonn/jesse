@@ -1,5 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Test and deploy static content to Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -21,7 +21,27 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Single deploy job since we're just deploying
+  run-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: 16
+          cache: npm
+          check-latest: true
+
+      - name: Install deps
+        run: |
+          npm install
+          npx playwright install
+
+      - name: Test
+        run: npm run regression --ignore-snapshots
   deploy:
     environment:
       name: github-pages
