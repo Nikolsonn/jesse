@@ -38,7 +38,8 @@ jobs:
 
       - name: Install deps
         run: |
-          npm install
+          npm ci
+          cd playwright && npm ci
           npx playwright install
 
       - name: Test
