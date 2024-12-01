@@ -27,7 +27,8 @@
     "useDefineForClassFields": true
   },
   "include": [
-    "src"
+    "src",
+    "playwright.config.ts",
   ],
   "references": [
     {

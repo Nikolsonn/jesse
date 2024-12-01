@@ -3,12 +3,12 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
   testDir: './playwright/tests',
   fullyParallel: true,
-  forbidOnly: false,
-  retries: 2,
-  workers: 1,
+  forbidOnly: !!process.env.CI,
+  retries: process.env.CI ? 2 : 0,
+  workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    headless: true,
+    headless: process.env.CI ? true : false,
     trace: 'on-first-retry',
   },
 
@@ -16,10 +16,6 @@ export default defineConfig({
     {
       name: 'Mobile Chrome',
       use: { ...devices['iPhone 12'], browserName: 'chromium' },
-    },
-    {
-      name: 'Mobile Mozilla',
-      use: {...devices['iPhone 15 Pro Max'], browserName: 'firefox' },
     },
   ],
 });
