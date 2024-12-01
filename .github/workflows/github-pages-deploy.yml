@@ -45,7 +45,7 @@ jobs:
       #   run: npx playwright install-deps
 
       - name: Test
-        run: npm run regression --ignore-snapshots
+        run: npm run test --ignore-snapshots
 
       - name: Build
         run: npm run build
