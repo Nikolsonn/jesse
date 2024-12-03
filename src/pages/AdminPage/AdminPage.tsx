@@ -5,7 +5,6 @@ import {Page} from '@/components/Page.tsx';
 import {TEST_DATA} from "@/pages/TestDataUtils/testData.ts";
 import {CardChip} from "@telegram-apps/telegram-ui/dist/components/Blocks/Card/components/CardChip/CardChip";
 
-
 export const AdminPage: FC = () => {
     return (
         <Page back={true}>
@@ -23,8 +22,8 @@ export const AdminPage: FC = () => {
                             readOnly
                             subtitle={adItem.title}
                         >
-                            <Button size='s' style={{marginLeft: 10}}>Accept</Button>
-                            <Button size='s' style={{marginLeft: 10}}>Rejected</Button>
+                            <Button size='s'>Accept</Button>
+                            <Button size='s' style={{marginLeft: 10}}>Reject</Button>
                         </Card.Cell>
                     </Card>
                 ))}
