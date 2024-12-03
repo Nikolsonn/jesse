@@ -1,6 +1,6 @@
-export type adsDescription = {
+export type AdDescription = {
     imgSrc: string;
-    adStatus: adStatus;
+    adStatus: AdStatus;
     currency: '€';
     title: string;
     description?: string;
@@ -8,4 +8,4 @@ export type adsDescription = {
     referral?: string;
 }
 
-type adStatus = 'accepted'|'rejected'|'pending';
+type AdStatus = 'accepted' | 'rejected' | 'pending';

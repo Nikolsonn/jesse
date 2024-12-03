@@ -1,4 +1,4 @@
-import {adsDescription} from "@/pages/utils.ts";
+import {AdDescription} from "@/pages/types.ts";
 import image1 from './assets/1.jpg';
 import image2 from './assets/2.jpg';
 import image3 from './assets/3.jpg';
@@ -6,7 +6,7 @@ import image4 from './assets/4.jpg';
 import image5 from './assets/5.jpg';
 import image6 from './assets/6.jpg';
 
-export const TEST_DATA: adsDescription[] = [
+export const TEST_DATA: AdDescription[] = [
     {imgSrc: image1, title: 'Airplane', price: '100000', currency: "€", adStatus: "accepted"},
     {imgSrc: image2, title: 'Sunglasses', price: '10', currency: "€", adStatus: "accepted"},
     {imgSrc: image3, title: 'Beach cruise', price: '2999', currency: "€", adStatus: "accepted"},
