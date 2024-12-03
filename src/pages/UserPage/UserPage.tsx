@@ -4,9 +4,7 @@ import {Card} from '@telegram-apps/telegram-ui';
 import {Page} from '@/components/Page.tsx';
 import {TEST_DATA} from "@/pages/TestDataUtils/testData.ts";
 
-export const TestUserPage: FC = () => {
-    // Sort items by price in descending order
-
+export const UserPage: FC = () => {
     return (
         <Page back={true}>
             <div>

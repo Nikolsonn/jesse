@@ -6,7 +6,7 @@ import {TEST_DATA} from "@/pages/TestDataUtils/testData.ts";
 import {CardChip} from "@telegram-apps/telegram-ui/dist/components/Blocks/Card/components/CardChip/CardChip";
 
 
-export const TestPage: FC = () => {
+export const AdminPage: FC = () => {
     return (
         <Page back={true}>
             <div>
