@@ -20,7 +20,8 @@ A comprehensive system for managing advertisements within a channel-based interf
 **Data Models**
 ```json
 ads: {
-    "channel_Id": string,
+    "authorId": string,
+    "channelId": string,
     "adId": string,
     "imageLink": string,
     "title": string,
