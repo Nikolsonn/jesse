@@ -1,10 +1,9 @@
 import { defineConfig, devices } from '@playwright/experimental-ct-react';
 import * as path from 'path';
 
+console.log('Vite mode:', process.env.NODE_ENV);
+
 export default defineConfig({
-  expect: {
-    timeout: 60000
-  },
   testDir: './playwright/tests/component',
   snapshotDir: './playwright/screenshot',
   timeout: 10 * 1000,
@@ -19,6 +18,7 @@ export default defineConfig({
     trace: 'on-first-retry',
     ctPort: 3100,
     ctViteConfig: {
+      mode: 'development',
       resolve: {
         alias: {
           '@': path.resolve('./src'),

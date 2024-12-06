@@ -13,7 +13,7 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "test:e2e": "playwright test - c playwright.config.ts",
-    "test:ct": "NODE_ENV=dev playwright test -c playwright-ct.config.ts"
+    "test:ct": "NODE_ENV=development playwright test -c playwright-ct.config.ts"
   },
   "dependencies": {
     "@playwright/test": "^1.49.0",
@@ -28,7 +28,6 @@
   "devDependencies": {
     "@eslint/js": "^9.2.0",
     "@playwright/experimental-ct-react": "^1.49.0",
-    "@rollup/plugin-commonjs": "^28.0.1",
     "@types/node": "^22.10.1",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
