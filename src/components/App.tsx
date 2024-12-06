@@ -3,6 +3,7 @@ import { AppRoot } from '@telegram-apps/telegram-ui';
 import { Navigate, Route, Routes, HashRouter } from 'react-router-dom';
 
 import { routes } from '@/navigation/routes.tsx';
+import React from 'react';
 
 export function App() {
   const lp = useLaunchParams();
