@@ -1,11 +1,16 @@
 import test, { Page } from "@playwright/test"
+import { Navigation } from "./components/navigation";
 
 export class Jesse {
-  constructor(public readonly page: Page) {}
+  public navigation: Navigation;
 
-  async goToPage() {
+  constructor(public readonly page: Page) {
+    this.navigation = new Navigation(page);
+  }
+
+  public async openTgMiniApp(url: string): Promise<void> {
     await test.step('Open Jesse Page', async () => {
-      await this.page.goto('https://localhost:5173/jesse/');
+      await this.page.goto(url);
     });
   }
 }
