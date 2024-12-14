@@ -26,10 +26,10 @@ export const IndexPage: FC = () => {
                     header="Advertisment dasboard Jesse"
                     footer="Page to have an acces to different client test pages"
                 >
-                    <Link to="/admin-page">
+                    <Link data-testid="admin-page" to="/admin-page">
                         <Cell subtitle="User interface available for channel holder/admin">Admin page</Cell>
                     </Link>
-                    <Link to="/user-page">
+                    <Link data-testid="user-page" to="/user-page">
                         <Cell subtitle="User interface available for channel visitors">User/Visitor page</Cell>
                     </Link>
                 </Section>

@@ -8,9 +8,9 @@ export class Jesse {
     this.navigation = new Navigation(page);
   }
 
-  public async openTgMiniApp(url: string): Promise<void> {
+  public async openTgMiniApp(): Promise<void> {
     await test.step('Open Jesse Page', async () => {
-      await this.page.goto(url);
+      await this.page.goto('');
     });
   }
 }

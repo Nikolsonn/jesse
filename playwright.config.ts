@@ -12,6 +12,7 @@ export default defineConfig({
   use: {
     headless: process.env.CI ? true : false,
     trace: 'on-first-retry',
+    baseURL: 'https://localhost:5173/jesse/',
   },
   projects: [
     {

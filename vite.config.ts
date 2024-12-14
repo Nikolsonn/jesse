@@ -8,7 +8,6 @@ No need to use @rollup/plugin-commonjs - becauce vite use it by default:
 https://github.com/vitejs/vite/discussions/11739#discussioncomment-4722002
 */
 
-console.log('Vite mode:', process.env.NODE_ENV);
 export default defineConfig({
   base: '/jesse/',
   plugins: [
