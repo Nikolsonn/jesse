@@ -1,1 +1,0 @@
-// TODO: Realize test scanarios for admin from MIRO
