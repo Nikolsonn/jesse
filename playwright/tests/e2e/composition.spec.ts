@@ -26,7 +26,7 @@ test.describe('App Pages', async () => {
     const jesse = new Jesse(page);
     
     await jesse.openTgMiniApp();
-    await jesse.navigation.openPage('user-page');
+    await jesse.navigation.openPage('ad-board-page');
     
     await expect(page).toHaveScreenshot({ timeout: 0, fullPage: true });
   });

@@ -1,5 +1,5 @@
 import {Section, Cell, Image, List} from '@telegram-apps/telegram-ui';
-import type {FC} from 'react';
+import React, {FC} from 'react';
 
 import {Link} from '@/components/Link/Link.tsx';
 import {Page} from '@/components/Page.tsx';
@@ -29,8 +29,11 @@ export const IndexPage: FC = () => {
                     <Link data-testid="admin-page" to="/admin-page">
                         <Cell subtitle="User interface available for channel holder/admin">Admin page</Cell>
                     </Link>
-                    <Link data-testid="user-page" to="/user-page">
+                    <Link data-testid="ad-board-page" to="/ad-board-page">
                         <Cell subtitle="User interface available for channel visitors">User/Visitor page</Cell>
+                    </Link>
+                    <Link data-testid="ad-request-page" to="/ad-request-page">
+                        <Cell subtitle="User interface for ad request send">User/Visitor ad request page</Cell>
                     </Link>
                 </Section>
             </List>

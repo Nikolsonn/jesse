@@ -1,4 +1,4 @@
-import { type FC, useMemo } from 'react';
+import React, { type FC, useMemo } from 'react';
 import { initData, type User, useSignal } from '@telegram-apps/sdk-react';
 import { List, Placeholder } from '@telegram-apps/telegram-ui';
 

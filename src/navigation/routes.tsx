@@ -2,11 +2,11 @@ import type {ComponentType, JSX} from 'react';
 
 import {IndexPage} from '@/pages/IndexPage/IndexPage';
 import {InitDataPage} from '@/pages/InitDataPage.tsx';
-import {LaunchParamsPage} from '@/pages/LaunchParamsPage.tsx';
-import {ThemeParamsPage} from '@/pages/ThemeParamsPage.tsx';
 import {TONConnectPage} from '@/pages/TONConnectPage/TONConnectPage';
 import {AdminPage} from '@/pages/AdminPage/AdminPage.tsx';
-import {UserPage} from "@/pages/UserPage/UserPage.tsx";
+import {AdBoardPage} from "@/pages/UserPage/AdBoardPage.tsx";
+import React from 'react';
+import AdSendRequestPage from "@/pages/UserPage/AdSendRequestPage.tsx";
 
 interface Route {
     path: string;
@@ -18,9 +18,8 @@ interface Route {
 export const routes: Route[] = [
     {path: '/', Component: IndexPage},
     {path: '/init-data', Component: InitDataPage, title: 'Init Data'},
-    {path: '/theme-params', Component: ThemeParamsPage, title: 'Theme Params'},
-    {path: '/launch-params', Component: LaunchParamsPage, title: 'Launch Params'},
-    {path: '/user-page', Component: UserPage, title: 'User Page'},
+    {path: '/ad-board-page', Component: AdBoardPage, title: 'Users Ad Board Page'},
+    {path: '/ad-request-page', Component: AdSendRequestPage, title: 'Users Ad Request Page'},
     {path: '/admin-page', Component: AdminPage, title: 'Admin Page'},
     {
         path: '/ton-connect',
