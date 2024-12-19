@@ -41,8 +41,8 @@ jobs:
           npm ci
           npx playwright install
 
-      - name: Test
-        run: npm run test --ignore-snapshots
+      - name: Run e2e tests
+        run: npm run test:e2e --ignore-snapshots
 
       - name: Build
         run: npm run build

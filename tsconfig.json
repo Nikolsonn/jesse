@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
     "allowImportingTsExtensions": true,
+    "baseUrl": ".",
     "isolatedModules": true,
-    "jsx": "react-jsx",
+    "jsx": "react",
     "lib": [
       "ES2020",
       "DOM",
@@ -11,10 +12,12 @@
     "types": ["node"],
     "module": "ESNext",
     "moduleResolution": "bundler",
+    "sourceMap": true,
     "noEmit": true,
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "noImplicitAny": false,
     "paths": {
       "@/*": [
         "./src/*"
@@ -23,16 +26,15 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "ES2020",
+    "target": "ESNext",
     "useDefineForClassFields": true
   },
   "include": [
-    "src",
-    "playwright.config.ts",
+    "src", "playwright.config.ts", "playwright-ct.config.ts"
   ],
   "references": [
     {
-      "path": "./tsconfig.node.json"
-    }
-  ]
+      "path": "./tsconfig.node.json",
+    },
+  ],
 }
