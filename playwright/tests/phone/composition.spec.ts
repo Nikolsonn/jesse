@@ -30,4 +30,12 @@ test.describe('App Pages', async () => {
     
     await expect(page).toHaveScreenshot({ timeout: 0, fullPage: true });
   });
+  test('Validate User ad request Page', async({ page }) => {
+    const jesse = new Jesse(page);
+    
+    await jesse.openTgMiniApp();
+    await jesse.navigation.openPage('ad-request-page');
+    
+    await expect(page).toHaveScreenshot({ timeout: 0, fullPage: true });
+  });
 });
