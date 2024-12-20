@@ -20,9 +20,4 @@ export default defineConfig({
       use: { ...devices['iPhone 12'], browserName: 'chromium' },
     },
   ],
-  webServer: {
-    command: 'npm run dev',
-    url: 'http://127.0.0.1:5173/jesse/',
-    reuseExistingServer: !process.env.CI,
-  },
 });
