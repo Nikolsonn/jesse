@@ -10,7 +10,7 @@ import {
   Text,
   Title,
 } from '@telegram-apps/telegram-ui';
-import type { FC } from 'react';
+import React, { FC } from 'react';
 
 import { DisplayData } from '@/components/DisplayData/DisplayData.tsx';
 import { Page } from '@/components/Page.tsx';

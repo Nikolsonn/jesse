@@ -1,7 +1,7 @@
-import React, {type FC, useState} from 'react';
+import React, {CSSProperties, type FC, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 
-import {Button, Card } from '@telegram-apps/telegram-ui';
+import {Button, Card} from '@telegram-apps/telegram-ui';
 
 import {Page} from '@/components/Page.tsx';
 import {TEST_DATA} from "@/pages/TestDataUtils/testData.ts";
@@ -16,13 +16,13 @@ export const AdBoardPage: FC = () => {
         verticalAlign: 'top',
     };
 
-    const containerStyle = {
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-between',
+    const containerStyle: CSSProperties = {
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "space-between",
     };
 
-    const fixedButtonStyle = {
+    const fixedButtonStyle: CSSProperties = {
         position: 'fixed',
         bottom: '20px',
         left: '50%',
@@ -33,7 +33,7 @@ export const AdBoardPage: FC = () => {
     const navigate = useNavigate();
 
     const handleRedirect = () => {
-        navigate('/ad-request-page', { replace: true });
+        navigate('/ad-request-page', {replace: true});
     };
 
     return (
