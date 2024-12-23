@@ -15,20 +15,11 @@ export default defineConfig({
     tsconfigPaths(),
     mkcert(),
   ],
-  // build: {
-  //   rollupOptions: {
-  //     treeshake: false,
-  //     output: {
-  //       format: 'es',
-  //     },
-  //   },
-  // },
   publicDir: './public',
   server: {
     host: true,
   },
-  // define: {
-  //   'exports': {},
-  //   'process.env.PLAYWRIGHT_TEST': JSON.stringify(true),
-  // },
+  build: {
+    target: "esnext"
+  }
 });

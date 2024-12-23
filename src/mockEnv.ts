@@ -4,7 +4,7 @@ import {isTMA, LaunchParams, mockTelegramEnv, parseInitData, retrieveLaunchParam
 // When building the application the import.meta.env.DEV will value become
 // `false` and the code inside will be tree-shaken (removed), so you will not
 // see it in your final bundle.
-if (import.meta.env.DEV) {
+if (import.meta.env.DEV || import.meta.env.PROD) {
     await (async () => {
         if (await isTMA()) {
             return;
