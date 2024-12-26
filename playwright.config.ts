@@ -12,7 +12,7 @@ export default defineConfig({
   use: {
     headless: process.env.CI ? true : false,
     trace: 'on-first-retry',
-    baseURL: 'https://localhost:5173/jesse/',
+    baseURL: 'https://localhost:4173/jesse/',
   },
   projects: [
     {
@@ -20,4 +20,9 @@ export default defineConfig({
       use: { ...devices['iPhone 12'], browserName: 'chromium' },
     },
   ],
+  webServer: {
+    command: 'npm run preview',
+    port: 4173,
+    timeout: 120 * 1000,
+  },
 });

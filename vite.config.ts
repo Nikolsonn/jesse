@@ -18,8 +18,10 @@ export default defineConfig({
   publicDir: './public',
   server: {
     host: true,
+    open: true,
   },
   build: {
-    target: "esnext"
+    target: "esnext",
+    chunkSizeWarningLimit: 1000,
   }
 });
