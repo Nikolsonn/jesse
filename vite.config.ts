@@ -18,7 +18,6 @@ export default defineConfig({
   publicDir: './public',
   server: {
     host: true,
-    open: true,
   },
   build: {
     target: "esnext",

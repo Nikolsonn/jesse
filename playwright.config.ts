@@ -10,6 +10,7 @@ export default defineConfig({
   outputDir: './playwright/test-results',
   snapshotPathTemplate: "./playwright/screenshots/{projectName}/{testFilePath}/{testName}{ext}",
   use: {
+    ignoreHTTPSErrors: true,
     headless: process.env.CI ? true : false,
     trace: 'on-first-retry',
     baseURL: 'https://localhost:4173/jesse/',
