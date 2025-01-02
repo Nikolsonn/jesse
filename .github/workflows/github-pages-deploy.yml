@@ -5,6 +5,9 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: ['master']
+  pull_request:
+    branches:
+      - master
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -16,7 +19,8 @@ on:
 
 # Sets the GITHUB_TOKEN permissions to allow deployment to GitHub Pages
 permissions:
-  contents: read
+  # If issue will be with contents permissions(before: read, now:write), then check this - https://github.com/orgs/community/discussions/57244
+  contents: write
   pages: write
   id-token: write
 
@@ -26,7 +30,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  Setup-Test-Deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -34,6 +38,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref}}
 
       - name: Setup node
         uses: actions/setup-node@v3
@@ -63,6 +69,15 @@ jobs:
             echo "Running tests against existing screenshots..."
             npm run test
           fi
+
+      - name: Commit and push updated screenshots
+        if: ${{ github.event.inputs.update_screenshots == 'true' }}
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git add .
+          git commit -m "Update screenshots"
+          git push origin ${{ github.head_ref }}
 
       - name: Upload Playwright report arfifact
         uses: actions/upload-artifact@v4
