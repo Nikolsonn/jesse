@@ -7,7 +7,7 @@ import {Page} from '@/components/Page.tsx';
 import {TEST_DATA} from "@/pages/TestDataUtils/testData.ts";
 
 export const AdBoardPage: FC = () => {
-    const [openCard, setOpenCard] = useState(null);
+    const [openCard, setOpenCard] = useState<string | null>(null);
     const [files] = useState<File[]>();
 
     const cardTitle: CSSProperties = {
