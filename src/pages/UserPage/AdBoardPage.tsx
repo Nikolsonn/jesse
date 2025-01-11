@@ -37,7 +37,6 @@ export const AdBoardPage: FC = () => {
         margin: '10px',
         display: 'inline-block',
         verticalAlign: 'top',
-        transition: 'all 0.3s ease-in-out',
     };
 
     const openCardStyle: CSSProperties = {
@@ -92,6 +91,7 @@ export const AdBoardPage: FC = () => {
                         <img
                             src={items.imgSrc}
                             style={openCard === items.imgSrc ? openImgStyle : imgStyle}
+                            alt={items.title}
                         />
                         <Card.Cell style={openCard === items.imgSrc ? openCardTitle : cardTitle}>
                             <span>{items.title}</span>
