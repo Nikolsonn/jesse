@@ -13,7 +13,7 @@ export default defineConfig({
     ignoreHTTPSErrors: true,
     headless: process.env.CI ? true : false,
     trace: 'on-first-retry',
-    baseURL: 'https://localhost:4173/jesse/',
+    baseURL: process.env.CI ? 'http://localhost:4173/jesse/' : 'https://localhost:4173/jesse/',
   },
   projects: [
     {
