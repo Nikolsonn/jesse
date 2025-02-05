@@ -1,4 +1,4 @@
-import React, {CSSProperties, type FC, useState} from 'react';
+import React, {type FC, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 
 import {Button, Card} from '@telegram-apps/telegram-ui';
@@ -6,29 +6,12 @@ import {Button, Card} from '@telegram-apps/telegram-ui';
 import {Page} from '@/components/Page.tsx';
 import {TEST_DATA} from "@/pages/TestDataUtils/testData.ts";
 
+import {styles} from './AdBoardPage.style.ts';
+
 export const AdBoardPage: FC = () => {
+    const [openCard, setOpenCard] = useState<string | null>(null);
     const [files] = useState<File[]>();
 
-    const cardStyle = {
-        width: 'calc(50% - 20px)', // 50% width minus margins
-        margin: '10px',
-        display: 'inline-block',
-        verticalAlign: 'top',
-    };
-
-    const containerStyle: CSSProperties = {
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "space-between",
-    };
-
-    const fixedButtonStyle: CSSProperties = {
-        position: 'fixed',
-        bottom: '20px',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        zIndex: 1000,
-    };
 
     const navigate = useNavigate();
 
@@ -36,16 +19,25 @@ export const AdBoardPage: FC = () => {
         navigate('/ad-request-page', {replace: true});
     };
 
+    const handleOpenCard = (key: string) => {
+        openCard === key ? setOpenCard(null) : setOpenCard(key);
+    };
+
     return (
         <Page back={true}>
-            <div style={containerStyle}>
+            <div style={styles.container}>
                 {TEST_DATA.map(items => (
-                    <Card key={items.imgSrc} style={cardStyle}>
+                    <Card 
+                        key={items.imgSrc} 
+                        style={openCard === items.imgSrc ? styles.openCard : styles.card} 
+                        onClick={() => handleOpenCard(items.imgSrc)}
+                    >
                         <img
                             src={items.imgSrc}
-                            style={{width: '100%', height: 308, objectFit: 'cover'}}
+                            style={openCard === items.imgSrc ? styles.openImg : styles.img}
+                            alt={items.title}
                         />
-                        <Card.Cell>
+                        <Card.Cell style={openCard === items.imgSrc ? styles.openCardTitle : styles.cardTitle}>
                             <span>{items.title}</span>
                         </Card.Cell>
                     </Card>
@@ -62,7 +54,7 @@ export const AdBoardPage: FC = () => {
                     />
                 );
             })}
-            <Button style={fixedButtonStyle} onClick={handleRedirect}>
+            <Button style={styles.fixedButton} onClick={handleRedirect}>
                 Send your advertisement
             </Button>
         </Page>
