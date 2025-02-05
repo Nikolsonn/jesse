@@ -13,7 +13,7 @@ export default defineConfig({
   plugins: [
     react(),
     tsconfigPaths(),
-    mkcert(),
+    process.env.CI ? undefined : mkcert(),
   ],
   publicDir: './public',
   server: {
@@ -22,5 +22,5 @@ export default defineConfig({
   build: {
     target: "esnext",
     chunkSizeWarningLimit: 1000,
-  },
+  }
 });
