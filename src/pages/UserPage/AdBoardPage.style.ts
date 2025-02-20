@@ -6,10 +6,10 @@ const cardTitle: CSSProperties = {
 const openCardTitle: CSSProperties = {
     ...cardTitle,
     overflow: 'scroll',
-    maxWidth: '260px',
     maxHeight: '100%',
     backgroundColor: '#000000',
     borderRadius: '0 0 10px 10px',
+    width: 'calc(80% - 40px)',
 };
 
 const img: CSSProperties = {
@@ -20,6 +20,7 @@ const img: CSSProperties = {
 
 const openImg: CSSProperties = {
     borderRadius: '10px 10px 0 0',
+    width: "80%",
 };
 
 const card: CSSProperties = {
