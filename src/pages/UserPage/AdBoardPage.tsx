@@ -7,9 +7,10 @@ import {Page} from '@/components/Page.tsx';
 import {TEST_DATA} from "@/pages/TestDataUtils/testData.ts";
 
 import {styles} from './AdBoardPage.style.ts';
+import { AdDescription } from '../types.ts';
 
 export const AdBoardPage: FC = () => {
-    const [openCard, setOpenCard] = useState<string | null>(null);
+    const [openCard, setOpenCard] = useState<AdDescription | null>(null);
     const [files] = useState<File[]>();
 
 
@@ -19,26 +20,38 @@ export const AdBoardPage: FC = () => {
         navigate('/ad-request-page', {replace: true});
     };
 
-    const handleOpenCard = (key: string) => {
-        openCard === key ? setOpenCard(null) : setOpenCard(key);
-    };
-
     return (
         <Page back={true}>
+            {openCard && (
+                <Card
+                    key={openCard.imgSrc}
+                    style={styles.openCard}
+                    onClick={() => setOpenCard(null)}
+                >
+                    <img
+                        src={openCard.imgSrc}
+                        style={styles.openImg}
+                        alt={openCard.title}
+                    />
+                    <Card.Cell style={styles.openCardTitle}>
+                        <span>{openCard.title}</span>
+                    </Card.Cell>
+                </Card>
+            )}
             <div style={styles.container}>
-                {TEST_DATA.map(items => (
-                    <Card 
-                        key={items.imgSrc} 
-                        style={openCard === items.imgSrc ? styles.openCard : styles.card} 
-                        onClick={() => handleOpenCard(items.imgSrc)}
+                {TEST_DATA.map(item => (
+                    <Card
+                        key={item.imgSrc}
+                        style={styles.card}
+                        onClick={() => setOpenCard(item)}
                     >
                         <img
-                            src={items.imgSrc}
-                            style={openCard === items.imgSrc ? styles.openImg : styles.img}
-                            alt={items.title}
+                            src={item.imgSrc}
+                            style={styles.img}
+                            alt={item.title}
                         />
-                        <Card.Cell style={openCard === items.imgSrc ? styles.openCardTitle : styles.cardTitle}>
-                            <span>{items.title}</span>
+                        <Card.Cell style={styles.cardTitle}>
+                            <span>{item.title}</span>
                         </Card.Cell>
                     </Card>
                 ))}
